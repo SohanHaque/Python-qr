@@ -1,6 +1,8 @@
 import sys
 import qrcode
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QColorDialog, QFileDialog
+from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import Qt
 
 class QRCodeGenerator(QWidget):
     def __init__(qr_gen):
@@ -9,37 +11,47 @@ class QRCodeGenerator(QWidget):
 
     def initUI(qr_gen):
         qr_gen.setWindowTitle('QR Code Generator')
-        qr_gen.setGeometry(300, 300, 400, 200)
+        qr_gen.setGeometry(300, 300, 400, 250)
+        qr_gen.setWindowIcon(QIcon('qrcode.png'))
+        qr_gen.setStyleSheet('background-color: #f2f2f2;')
 
-        qr_gen.data_label = QLabel('Data:', qr_gen)
-        qr_gen.data_label.move(20, 20)
+        title_label = QLabel('QR Code Generator', qr_gen)
+        title_label.setGeometry(20, 20, 360, 40)
+        title_label.setAlignment(Qt.AlignCenter)
+        title_label.setStyleSheet('font-size: 20px; font-weight: bold;')
+
+        data_label = QLabel('Data:', qr_gen)
+        data_label.setGeometry(20, 80, 60, 20)
 
         qr_gen.data_input = QLineEdit(qr_gen)
-        qr_gen.data_input.setGeometry(100, 20, 200, 20)
+        qr_gen.data_input.setGeometry(90, 80, 260, 20)
 
-        qr_gen.box_size_label = QLabel('Box Size:', qr_gen)
-        qr_gen.box_size_label.move(20, 50)
+        box_size_label = QLabel('Box Size:', qr_gen)
+        box_size_label.setGeometry(20, 110, 60, 20)
 
         qr_gen.box_size_input = QLineEdit(qr_gen)
-        qr_gen.box_size_input.setGeometry(100, 50, 200, 20)
+        qr_gen.box_size_input.setGeometry(90, 110, 260, 20)
 
-        qr_gen.border_label = QLabel('Border:', qr_gen)
-        qr_gen.border_label.move(20, 80)
+        border_label = QLabel('Border:', qr_gen)
+        border_label.setGeometry(20, 140, 60, 20)
 
         qr_gen.border_input = QLineEdit(qr_gen)
-        qr_gen.border_input.setGeometry(100, 80, 200, 20)
+        qr_gen.border_input.setGeometry(90, 140, 260, 20)
 
-        qr_gen.fill_color_button = QPushButton('Fill Color', qr_gen)
-        qr_gen.fill_color_button.setGeometry(20, 110, 100, 25)
-        qr_gen.fill_color_button.clicked.connect(qr_gen.select_fill_color)
+        fill_color_button = QPushButton('Fill Color', qr_gen)
+        fill_color_button.setGeometry(20, 170, 110, 25)
+        fill_color_button.setStyleSheet('background-color: #4287f5; color: white;')
+        fill_color_button.clicked.connect(qr_gen.select_fill_color)
 
-        qr_gen.back_color_button = QPushButton('Background Color', qr_gen)
-        qr_gen.back_color_button.setGeometry(130, 110, 150, 25)
-        qr_gen.back_color_button.clicked.connect(qr_gen.select_background_color)
+        back_color_button = QPushButton('Background Color', qr_gen)
+        back_color_button.setGeometry(140, 170, 150, 25)
+        back_color_button.setStyleSheet('background-color: #4287f5; color: white;')
+        back_color_button.clicked.connect(qr_gen.select_background_color)
 
-        qr_gen.generate_button = QPushButton('Generate QR Code', qr_gen)
-        qr_gen.generate_button.setGeometry(20, 150, 150, 30)
-        qr_gen.generate_button.clicked.connect(qr_gen.generate_qr_code)
+        generate_button = QPushButton('Generate QR Code', qr_gen)
+        generate_button.setGeometry(20, 210, 270, 30)
+        generate_button.setStyleSheet('background-color: #51d367; color: white; font-weight: bold;')
+        generate_button.clicked.connect(qr_gen.generate_qr_code)
 
         qr_gen.show()
 
