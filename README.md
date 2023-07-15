@@ -1,5 +1,3 @@
-Sure! Here's an example of an awesome `README.md` file for your code:
-
 # QR Code Generator
 
 This is a Python script that generates QR codes with a graphical user interface (GUI) using PyQt5. With this application, you can easily generate QR codes for various purposes such as sharing URLs, text messages, contact information, and more.
@@ -53,6 +51,13 @@ This is a Python script that generates QR codes with a graphical user interface 
 10. A file dialog will open, allowing you to choose the location and name for the generated QR code image file. Select a location and click "Save".
 
 11. The QR code image will be generated and saved as a PNG file.
+
+## Screenshots
+
+
+|                                                  UI                                                  |                                               Qr Code                                               |
+| ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ![1](https://github.com/SohanHaque/Python-qr/assets/111044439/668fc1e1-20ee-4603-9008-a283cdacfc04)  | ![2](https://github.com/SohanHaque/Python-qr/assets/111044439/01983acb-60c8-49d4-917f-5a50ee391444) |
 
 ## Contributing
 
